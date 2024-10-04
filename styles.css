@@ -1,0 +1,160 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Set full height for html and body */
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    background-color: #f7f8fc;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Column layout for entire body */
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: #f7f8fc;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #f7f8fc;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff595e; /* Modern vibrant hover color */
+    border-radius: 30px; /* Rounded hover effect */
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-top: 20px; /* Add space above the paragraph */
+}
+
+/* Main Download Section */
+header.hero {
+    background-color: #2a2a2a; /* Dark tone */
+    color: #fff;
+    display: flex;
+    flex: 1; /* Fill remaining space */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 800px; /* Limit width of content */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    opacity: 0.85;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #ff595e;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px; /* Add space above the button */
+}
+
+.cta-button:hover {
+    background-color: #ff787d;
+    box-shadow: 0 5px 20px rgba(255, 89, 94, 0.3);
+}
+
+/* Footer Section */
+footer {
+    background-color: #2a2a2a;
+    color: #f7f8fc;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-content p {
+    margin: 5px 0; /* Spacing between paragraphs */
+}
+
+.footer-content a {
+    color: #ff595e;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header.hero {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+
+    header.hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Spacing for vertical stacking */
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}

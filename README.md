@@ -1,2 +1,0 @@
-# KorvaqScript-Site
-KorvaqScript Website
