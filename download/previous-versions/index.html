@@ -3,97 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korvaqscrip Download</title>
+    <title>Download KorvaqScrip</title>
     <link rel="stylesheet" href="../../styles.css">
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body Styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Versions Section */
-        .Versions {
-            width: 60%;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: white;
-            border: 1px solid #ccc;
-            text-align: center;
-        }
-
-        .Versions h2 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .Versions h5 a {
-            font-size: 1rem;
-            color: #0078d7;
-            text-decoration: none;
-            display: block;
-            margin: 10px 0;
-        }
-
-        .Versions h5 a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: auto;
-        }
-
-        .footer-content a {
-            color: #ff595e;
-            text-decoration: none;
-        }
-
-        .footer-content a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
+
+<style>
+    a {
+        color: darkcyan;
+    }
+</style>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo" onclick="window.location.href='../../'">Korvaqscrip</div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="download">Download</a></li>
-            <li><a href="help">Help</a></li>
-            <li><a href="https://github.com/Byson94/KorvaqScrip/issues">Report A Problem</a></li>
-            <li><a href="../../korvaqscrip/">About</a></li>
-        </ul>
-    </nav>
-
-    <!-- Versions -->
-    <div class="Versions">
-        <h2>Version 0.2.0</h2>
-        <h5><a href="../../installers/previous/korvaqshell-Installer0.2.0.exe">Download for windows</a></h5>
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Byson94 - Korvaqscrip is licensed under the Korvaq License.</p>
-            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+    <header>
+        <div class="logo" onclick="window.location.href='../../'">KorvaqScrip</div>
+        <nav>
+            <ul>
+                <li><a href="../../">Home</a></li>
+                <li><a href="#documentation">Documentation</a></li>
+                <li><a href="../">Downloads</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Downloads</h1>
+        <p>Get a previous version of KorvaqScrip!</p>
+        <div class="download-buttons">
+            <h2>Version 0.2.0</h2>
+            <h5><a href="../../installers/previous/korvaqshell-Installer0.2.0.exe">Download for windows</a></h5>
+            <br>
+            <a href="../">return</a>
         </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 KorvaqScrip. All rights reserved.</p>
     </footer>
 </body>
 </html>

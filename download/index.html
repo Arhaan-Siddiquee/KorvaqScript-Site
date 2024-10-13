@@ -1,218 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download KorvaqShell</title>
+    <title>Download KorvaqScrip</title>
     <link rel="stylesheet" href="../styles.css">
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            height: 100%;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f7f8fc;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Main Container */
-        .main-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; /* Center vertically */
-            flex-grow: 1; /* Take remaining space */
-            padding: 20px; /* Reduced padding */
-            text-align: center;
-            background-color: #ffffff; /* Traditional white background */
-            border: 1px solid #ddd; /* Light border for definition */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-            margin: 20px; /* Margin around the main content */
-            min-height: 200px; /* Minimum height to ensure it has some space */
-        }
-
-        h1 {
-            font-size: 2.5rem; /* Adjusted for better fit */
-            margin-bottom: 15px; /* Reduced margin */
-            color: #1f1f1f;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin: 15px 0 5px; /* Adjusted margin */
-            color: #555;
-        }
-
-        /* Download Buttons */
-        .download-buttons {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: flex-start;
-            width: 100%;
-            margin: 20px 0; /* Adjusted margin */
-        }
-
-        .latest-downloads,
-        .previous-updates {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 45%;
-            padding: 10px;
-        }
-
-        .download-buttons a {
-            background-color: #0078D7;
-            color: #fff;
-            padding: 15px 20px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin: 10px 0;
-            width: 90%;
-            max-width: 300px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .download-buttons .previous-updates a {
-            background-color: #ff595e;
-            font-size: 1rem;
-            padding: 20px 30px;
-        }
-
-        .download-buttons a:hover {
-            background-color: #005a9e;
-            transform: translateY(-2px);
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: #2a2a2a;
-            color: #f7f8fc;
-            text-align: center;
-            padding: 20px;
-            margin-top: auto;
-        }
-
-        .footer-content p {
-            margin: 5px 0;
-        }
-
-        .footer-content a {
-            color: #ff595e;
-            text-decoration: none;
-        }
-
-        .footer-content a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #1f1f1f;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                z-index: 1000;
-            }
-
-            .navbar .nav-links.show {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            h1 {
-                font-size: 2rem; /* Adjusted for smaller screens */
-            }
-
-            h3 {
-                font-size: 1.4rem;
-            }
-
-            .download-buttons a {
-                width: 90%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navbar .logo {
-                font-size: 1.5rem;
-            }
-
-            .navbar .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-links li {
-                margin: 5px 0;
-            }
-
-            .download-buttons a {
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 
+<style>
+    a {
+        color: darkcyan;
+    }
+</style>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo" onclick="window.location.href='../'" style="cursor: pointer;">Korvaqscrip</div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="download">Download</a></li>
-            <li><a href="help">Help</a></li>
-            <li><a href="https://github.com/Byson94/KorvaqScrip/issues">Report A Problem</a></li>
-            <li><a href="../korvaqscrip/">About</a></li>
-        </ul>
-    </nav>
-
-    <div class="main-container">
-        <h1>Download KorvaqShell</h1>
-
-        <!-- Download Section -->
+    <header>
+        <div class="logo" onclick="window.location.href='../'">KorvaqScrip</div>
+        <nav>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="#documentation">Documentation</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Downloads</h1>
+        <p>Get the latest version of KorvaqScrip and start programming with ease!</p>
         <div class="download-buttons">
-            <div class="latest-downloads">
-                <h3>Download the latest update</h3>
-                <a href="../installers/latest/korvaqshell-Installer0.3.0.exe">Download for windows</a>
-                <h3>Previous Updates</h3>
-                <a href="previous-versions/">Download Previous Updates</a>
-            </div>
+            <p>Unfortunately KorvaqScrip is currently only available for windows...</p>
+            <a class="download-button" href="../installers/latest/korvaqshell-Installer-0.3.0.exe">Download vr.0.3.0 for Windows</a>
+            <br>
+            <br>
+            <p>Looking for a previous version? <br> <a href="./previous-versions/">download them here!</a></p>
         </div>
-    </div>
+    </section>
+
+    <section class="version-info">
+        <h2>Latest Version</h2>
+        <p>Version 0.3.0 - Released on 2024-10-02</p>
+        <p>Check out the <a href="#changelog">changelog</a> for new features and fixes.</p>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Byson94 - Korvaqscrip is licensed under the Korvaq License.</p>
-            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
-        </div>
+        <p>&copy; 2024 KorvaqScrip. All rights reserved.</p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('show');
-        }
-    </script>
 </body>
-
 </html>
