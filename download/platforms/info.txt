@@ -1,0 +1,3 @@
+Platforms:
+ - Windows (exe)
+ - Web (automatically usable on mac, linux and every other OS that has internet)
