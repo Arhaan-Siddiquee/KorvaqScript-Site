@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolmogorov Complexity Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #eaf2f8;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #d1e7fd;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1e1e1e;
+                color: #f0f0f0;
+            }
+            h1, h2, h3 {
+                color: #ecf0f1;
+            }
+            table {
+                border-color: #444;
+            }
+            th {
+                background-color: #333;
+            }
+            td {
+                border-color: #555;
+            }
+            tr:nth-child(even) {
+                background-color: #2c2c2c;
+            }
+            tr:hover {
+                background-color: #444;
+            }
+            li {
+                border-color: #555;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Kolmogorov Complexity</h1>
+<p>This is a measure of the complexity of a set of syntax to see if Korvaq is simpler than Python and JavaScript. Here, the lower the number, the simpler the syntax will be.</p>
+
+<p><strong>NOTE:</strong> We used only a few syntax of each language for this comparison; the real complexity of each language is much more than this if we compared with all the features, and when doing this, the language with the least features would get the lowest score.</p>
+
+<p><strong>NOTE:</strong> This is not a truly accurate measure of complexity. It is impossible to measure the exact simplicity of a language using Kolmogorov complexity, and the true simplicity of a language depends on personal preference. It is up to you to decide if a language is simple or hard.</p>
+
+<h2>KorvaqScrip:</h2>
+<table>
+    <tr>
+        <th>Syntax</th>
+        <th>Syntax To Bits</th>
+        <th>Result (bits)</th>
+    </tr>
+    <tr>
+        <td>let</td>
+        <td>3 * 8</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>make</td>
+        <td>4 * 8</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>show</td>
+        <td>4 * 8</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>if</td>
+        <td>2 * 8</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>else</td>
+        <td>4 * 8</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>loop</td>
+        <td>4 * 8</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>while</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>func</td>
+        <td>4 * 8</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>arradd</td>
+        <td>6 * 8</td>
+        <td>48</td>
+    </tr>
+    <tr>
+        <td>arrdel</td>
+        <td>6 * 8</td>
+        <td>48</td>
+    </tr>
+    <tr>
+        <td>arr</td>
+        <td>3 * 8</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>//</td>
+        <td>2 * 8</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>async</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>read</td>
+        <td>4 * 8</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>arrsize</td>
+        <td>7 * 8</td>
+        <td>56</td>
+    </tr>
+    <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>---</strong></td>
+        <td><strong>504</strong></td>
+    </tr>
+    <tr>
+        <td><strong>Bits per syntax</strong></td>
+        <td><strong>---</strong></td>
+        <td><strong>32</strong></td>
+    </tr>
+</table>
+
+<h2>Python:</h2>
+<table>
+    <tr>
+        <th>Syntax</th>
+        <th>Syntax To Bits</th>
+        <th>Result (bits)</th>
+    </tr>
+    <tr>
+        <td>=</td>
+        <td>1 * 8</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>def</td>
+        <td>3 * 8</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>print</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>if</td>
+        <td>2 * 8</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>else</td>
+        <td>4 * 8</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>for</td>
+        <td>3 * 8</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>while</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>def</td>
+        <td>3 * 8</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>.append()</td>
+        <td>9 * 8</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>.remove()</td>
+        <td>9 * 8</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>[0] (index value)</td>
+        <td>3 * 8</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>#</td>
+        <td>1 * 8</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>async</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>.read()</td>
+        <td>7 * 8</td>
+        <td>56</td>
+    </tr>
+    <tr>
+        <td>len()</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>---</strong></td>
+        <td><strong>520</strong></td>
+    </tr>
+    <tr>
+        <td><strong>Bits per syntax</strong></td>
+        <td><strong>---</strong></td>
+        <td><strong>34.29</strong></td>
+    </tr>
+</table>
+
+<h2>JavaScript:</h2>
+<table>
+    <tr>
+        <th>Syntax</th>
+        <th>Syntax To Bits</th>
+        <th>Result (bits)</th>
+    </tr>
+    <tr>
+        <td>let</td>
+        <td>3 * 8</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>const</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>console.log()</td>
+        <td>13 * 8</td>
+        <td>104</td>
+    </tr>
+    <tr>
+        <td>if</td>
+        <td>2 * 8</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>else</td>
+        <td>4 * 8</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>for</td>
+        <td>3 * 8</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>while</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>function</td>
+        <td>8 * 8</td>
+        <td>64</td>
+    </tr>
+    <tr>
+        <td>.push</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>.pop</td>
+        <td>4 * 8</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>[0] (1st-index)</td>
+        <td>3 * 8</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>//</td>
+        <td>2 * 8</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>async</td>
+        <td>5 * 8</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>readFile</td>
+        <td>8 * 8</td>
+        <td>64</td>
+    </tr>
+    <tr>
+        <td>.length</td>
+        <td>7 * 8</td>
+        <td>56</td>
+    </tr>
+    <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>---</strong></td>
+        <td><strong>616</strong></td>
+    </tr>
+    <tr>
+        <td><strong>Bits per syntax</strong></td>
+        <td><strong>---</strong></td>
+        <td><strong>40</strong></td>
+    </tr>
+</table>
+
+<h1>Summary</h1>
+
+<h3>Total Bits Used</h3>
+<ul>
+    <li><strong>KorvaqScrip:</strong> 504 bits</li>
+    <li><strong>Python:</strong> 520 bits</li>
+    <li><strong>JavaScript:</strong> 616 bits</li>
+</ul>
+
+<h3>Average Bits per Syntax</h3>
+<ul>
+    <li><strong>KorvaqScrip:</strong> 32 bits per syntax</li>
+    <li><strong>Python:</strong> 34.29 bits per syntax</li>
+    <li><strong>JavaScript:</strong> 40 bits per syntax</li>
+</ul>
+
+</body>
+</html>
