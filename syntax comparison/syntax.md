@@ -2,6 +2,8 @@
 This  is a measure of the complexity of a set of syntax to see if korvaq is simpler than python and javascript.
 Here the lower the number the simpler the syntax will be. 
 
+NOTE: We used only a few syntax of each language for this comparison, the real complexity of each language is much more than this if we compared with all the features and when doing this, the language with the least features would get the lowest score.
+
 NOTE: This is not a truly accurate measure of complexity. It is impossible to measure the exact simplicity of a language using Kolmogorov complexity, and the true simplicity of a language depends on personal preference. It is up to you to decide if a language is simple or hard.
 
 
