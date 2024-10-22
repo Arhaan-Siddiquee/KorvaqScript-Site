@@ -6,6 +6,36 @@
     <title>KorvaqScrip</title>
     <link rel="shortcut icon" href="icons/default-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function detectOS() {
+            const userAgent = window.navigator.userAgent;
+            let os = "unknown";
+
+            if (userAgent.indexOf("Win") !== -1) os = "windows";
+            else if (userAgent.indexOf("Mac") !== -1) os = "mac";
+            else if (userAgent.indexOf("Linux") !== -1) os = "linux";
+
+            return os;
+        }
+
+        function showInstallers() {
+            const os = detectOS();
+
+            const windowsInstallers = document.getElementById("windows-installers");
+            const macInstallers = document.getElementById("mac-installers");
+            const linuxInstallers = document.getElementById("linux-installers");
+
+            if (os === "windows") {
+                windowsInstallers.style.display = "block";
+            } else if (os === "mac") {
+                macInstallers.style.display = "block";
+            } else if (os === "linux") {
+                linuxInstallers.style.display = "block";
+            }
+        }
+
+        window.onload = showInstallers;
+    </script>
 </head>
 <style>
     #why-korvaq {
@@ -60,30 +90,54 @@
     <!-- New Download Section -->
     <section class="downloads" id="downloads">
         <h2>Downloads</h2>
-        <div class="download-card">
-            <h3>Download the Latest Version</h3>
-            <p>Get the newest features and updates by downloading the latest version of KorvaqScrip.</p>
-            <a class="cta" href="./installers/latest/korvaqshell-Installer-0.4.0.exe">Download v0.4.0</a>
-        </div>
-        
-        <!-- Scrollable Cube for Specific Versions -->
-        <div class="download-card">
-            <h3>Download a Specific Version</h3>
-            <p>Looking for a specific version? Scroll through our archive to find the right one for your project.</p>
-            <div class="version-cube">
-                <ul>
-                    <li><a href="./installers/latest/korvaqscrip-Installer-0.4.0.exe">Version 0.4.0</a></li>
-                    <li><a href="./installers/previous/korvaqshell-Installer-0.3.0.exe">Version 0.3.0</a></li>
-                    <li><a href="./installers/previous/korvaqshell-Installer0.2.0.exe">Version 0.2.0</a></li>
-                    <li><a href="./installers/version-0.1.0" target="_blank">Version 0.1.0</a></li>
+
+            <!-- Windows Installers -->
+            <div id="windows-installers" class="download-card" style="display:none;">
+                <h3>Download for Windows</h3>
+                <p>Get the latest version for Windows.</p>
+                <a class="cta" href="./installers/latest/korvaqshell-Installer-0.4.0.exe">Download v0.4.0</a>
+                <p>Looking for a specific version?</p>
+                <div class="version-cube">
+                    <ul>
+                        <li><a href="./installers/latest/korvaqscrip-Installer-0.4.0.exe">Version 0.4.0</a></li>
+                        <li><a href="./installers/previous/korvaqshell-Installer-0.3.0.exe">Version 0.3.0</a></li>
+                        <li><a href="./installers/previous/korvaqshell-Installer-0.2.0.exe">Version 0.2.0</a></li>
+                        <li><a href="./installers/version-0.1.0" target="_blank">Version 0.1.0</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    
-        <div class="download-card">
-            <h3>Platform Compatibility</h3>
-            <p>KorvaqScrip is available for Windows, Mac, and Linux. Start coding on your preferred platform!</p>
-            <a class="cta" href="./download/platforms/" target="_blank">Check Platforms</a>
-        </div>
+
+            <!-- Mac Installers -->
+            <div id="mac-installers" class="download-card" style="display:none;">
+                <h3>Download for Mac</h3>
+                <p>Get the latest version for Mac.</p>
+                <a class="cta" href="./linux.mac downloads/latest/korvaqscrip-macos">Download v0.4.0</a>
+                <p>Looking for a specific version?</p>
+                <div class="version-cube">
+                    <ul>
+                        <li><a href="./linux.mac downloads/latest/korvaqscrip-macos">Version 0.4.0</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Linux Installers -->
+            <div id="linux-installers" class="download-card" style="display:none;">
+                <h3>Download for Linux</h3>
+                <p>Get the latest version for Linux.</p>
+                <a class="cta" href="./linux.mac downloads/latest/korvaqscrip-linux">Download v0.4.0</a>
+                <p>Looking for a specific version?</p>
+                <div class="version-cube">
+                    <ul>
+                        <li><a class="cta" href="./linux.mac downloads/latest/korvaqscrip-linux">Download v0.4.0</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="download-card">
+                <h3>Platform Compatibility</h3>
+                <p>KorvaqScrip is available for Windows, Mac, and Linux. Start coding on your preferred platform!</p>
+                <a class="cta" href="./download/platforms/" target="_blank">Check Platforms</a>
+            </div>
     </section>
 
     <!-- New Section to Attract Users -->
