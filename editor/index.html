@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korvaq Editor</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: #1e1e1e;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #editor-container {
+            display: flex;
+            align-items: flex-start;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #line-number {
+            padding: 10px 15px;
+            text-align: right;
+            user-select: none;
+            background-color: #2e2e2e;
+            border-right: 1px solid #444;
+            min-width: 50px; 
+            height: 500px; 
+            overflow: hidden;
+        }
+
+        textarea {
+            width: 600px; 
+            height: 500px; 
+            background-color: rgb(40, 40, 40);
+            color: rgb(220, 220, 220);
+            border: none;
+            resize: none;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            transition: background-color 0.3s;
+            overflow: auto;
+        }
+
+        textarea:focus {
+            outline: none;
+            background-color: rgb(70, 70, 70);
+        }
+
+        #output-container {
+            width: 300px; 
+            height: 500px; 
+            background-color: rgb(30, 30, 30);
+            border-left: 1px solid #444; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        #output {
+            flex: 1; 
+            background-color: rgb(40, 40, 40);
+            color: rgb(220, 220, 220);
+            padding: 10px;
+            overflow: auto; 
+            width: 280px;
+            border: none; 
+            resize: none; 
+        }
+
+        button {
+            margin: 10px; 
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; 
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+
+        h5 {
+            height: auto;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            #editor-container {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            #line-number {
+                width: auto;
+            }
+
+            textarea {
+                width: 100%;
+            }
+
+            #output-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Korvaq Editor</h1>
+    <div id="editor-container">
+        <div id="line-number">
+            <h5 id="line-number-content">1</h5>
+        </div>
+        <textarea spellcheck="false" id="code" placeholder="Type your code here..." oninput="updateLineNumbers()" onscroll="syncScroll()"></textarea>
+        <div id="output-container">
+            <textarea wrap="soft" spellcheck="false" id="output" placeholder="Output will be displayed here..." readonly></textarea>
+            <button id="run-code" onclick="runCode()">Run</button>
+        </div>
+    </div>
+
+    <script>
+        function updateLineNumbers() {
+            const code = document.getElementById('code').value;
+            const lineNumberElement = document.getElementById('line-number-content');
+            const lineCount = code.split('\n').length;
+            lineNumberElement.innerHTML = '';
+
+            for (let i = 1; i <= lineCount; i++) {
+                lineNumberElement.innerHTML += i + '<br>';
+            }
+        }
+
+        function syncScroll() {
+            const textarea = document.getElementById('code');
+            const lineNumberDiv = document.getElementById('line-number');
+            lineNumberDiv.scrollTop = textarea.scrollTop; 
+        }
+
+        function clearOutput() {
+            document.getElementById('output').value = ''; 
+        }
+
+        updateLineNumbers(); 
+
+        // Interpreter RUN
+        let Lexer, Parser, Interpreter; 
+
+        async function loadModules() {
+            const lexerModule = await import('./interpreter/lexer.js');
+            Lexer = lexerModule.default;
+
+            const parserModule = await import('./interpreter/parser.js');
+            Parser = parserModule.default;
+
+            const interpreterModule = await import('./interpreter/interpreter.js');
+            Interpreter = interpreterModule.default;
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadModules();
+        });
+
+        function runCode() {
+            const code = document.getElementById('code').value; 
+            try {
+                const lexer = new Lexer(code);
+                const parser = new Parser(lexer);
+                const statements = parser.parse();
+
+                const output = [];
+                const originalConsoleLog = console.log;
+
+                console.log = function(...args) {
+                    output.push(args.join(' '));
+                    originalConsoleLog.apply(console, args);
+                };
+
+                const interpreter = new Interpreter(); 
+                interpreter.interpret(statements);
+                console.log = originalConsoleLog;
+
+                document.getElementById('output').innerHTML = output.join('<br>');
+            } catch (error) {
+                document.getElementById('output').textContent = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
