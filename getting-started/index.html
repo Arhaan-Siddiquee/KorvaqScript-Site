@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download KorvaqScrip</title>
+    <title>KorvaqScrip — Getting Started</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="shortcut icon" href="../icons/default-icon.png" type="image/x-icon">
 </head>
@@ -12,6 +12,50 @@
     a {
         color: darkcyan;
     }
+
+    h1 {
+        color: #e7e40e;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        color: #002244;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-decoration: underline;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    ul {
+        margin-bottom: 20px;
+    }
+
+    li {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: #008b8b;
+        font-weight: 600;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 </style>
 <body>
     <header>
@@ -19,82 +63,83 @@
         <nav>
             <ul>
                 <li><a href="../">Home</a></li>
-                <li><a href="#documentation">Documentation</a></li>
-                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="../documentation">Documentation</a></li>
+                <li><a href="./download">Downloads</a></li>
                 <li><a href="#community">Community</a></li>
             </ul>
         </nav>
     </header>
     
     <section class="hero" style="text-align: left;">
-        <h1>Getting Started</h1>
+        <h1 style="font-size: 40px; text-align: center;">Getting Started</h1>
+        <hr>
         <p>
-            KorvaqScrip is a beginner-friendly programming language with a straightforward syntax, ideal for clear and concise coding. It uses the ".kq" file extension and features simple constructs and data types.
+            KorvaqScrip is a beginner-friendly programming language that features a clean and straightforward syntax, making it easy for developers to write clear, concise code. KorvaqScrip files use the <code>.kq</code> file extension, and the language is built around a few simple constructs and data types for fast learning and efficient coding.
         </p>
         
         <h2>Basic Syntax</h2>
         <p>
-            Statements are terminated with a semicolon (<code>;</code>), and code blocks are enclosed in braces (<code>{}</code>).
+            Statements in KorvaqScrip are terminated with a semicolon (<code>;</code>), and code blocks are wrapped in braces (<code>{}</code>).
         </p>
 
         <h2>Variable Declarations</h2>
         <ul>
-            <li><strong>Mutable Variables:</strong> Declared with <code>let</code>, allowing reassignment (e.g., <code>let x = 5;</code>).</li>
-            <li><strong>Immutable Variables:</strong> Declared with <code>make</code>, these cannot be changed (e.g., <code>make y = 3;</code>).</li>
-            <li><strong>Deleting Variables:</strong> Use <code>delvar</code> to remove variables and prevent memory leaks (e.g., <code>delvar x;</code>). You can delete all variables with <code>delvar all;</code>.</li>
+            <li><strong>Mutable Variables:</strong> Use <code>let</code> to declare variables that can be reassigned (e.g., <code>let x = 5;</code>).</li>
+            <li><strong>Immutable Variables:</strong> Use <code>make</code> to declare variables that cannot be changed after assignment (e.g., <code>make y = 3;</code>).</li>
+            <li><strong>Deleting Variables:</strong> Use <code>delvar</code> to delete variables and free memory (e.g., <code>delvar x;</code>). To clear all variables at once, use <code>delvar all;</code>.</li>
         </ul>
 
         <h2>Data Types</h2>
         <ul>
-            <li><strong>Numbers:</strong> Support mathematical operations (e.g., <code>let sum = 5 + 10;</code>).</li>
+            <li><strong>Numbers:</strong> Support common mathematical operations (e.g., <code>let sum = 5 + 10;</code>).</li>
             <li><strong>Strings:</strong> Defined using double quotes (e.g., <code>let greeting = "Hello, World!";</code>).</li>
-            <li><strong>Booleans:</strong> Can be <code>true</code> or <code>false</code> (e.g., <code>let isActive = true;</code>).</li>
+            <li><strong>Booleans:</strong> Store values of either <code>true</code> or <code>false</code> (e.g., <code>let isActive = true;</code>).</li>
         </ul>
 
         <h2>Control Structures</h2>
         <ul>
-            <li><strong>Conditional Statements:</strong> Use <code>if</code> and <code>else</code> for conditional logic (e.g., <code>if (x > 5) { ... }</code>).</li>
-            <li><strong>Loops:</strong> <code>loop</code> iterates over a range, while <code>while</code> iterates based on a condition (e.g., <code>while (example == false) { ... }</code>).</li>
+            <li><strong>Conditional Statements:</strong> Use <code>if</code> and <code>else</code> to implement branching logic (e.g., <code>if (x > 5) { ... }</code>).</li>
+            <li><strong>Loops:</strong> Use <code>loop</code> for range-based iteration and <code>while</code> for condition-based iteration (e.g., <code>while (example == false) { ... }</code>).</li>
         </ul>
 
         <h2>Functions</h2>
         <p>
-            Declared with <code>func</code>, they accept parameters and return values (e.g., <code>func addVal(a, b) { ... }</code>).
+            Functions in KorvaqScrip are defined using the <code>func</code> keyword, accepting parameters and optionally returning values (e.g., <code>func addVal(a, b) { ... }</code>).
         </p>
 
         <h2>Output</h2>
         <p>
-            Use <code>show</code> to print values to the console (e.g., <code>show "Hello, World!";</code>).
+            Use <code>show</code> to display output in the console (e.g., <code>show "Hello, World!";</code>).
         </p>
 
         <h2>Expressions</h2>
         <p>
-            Support assignments and binary expressions for arithmetic and logical operations.
+            KorvaqScrip supports assignment, arithmetic, and logical operations through expressions.
         </p>
 
         <h2>Arrays</h2>
         <p>
-            Defined with square brackets (<code>[]</code>) to hold multiple values (e.g., <code>let numbers = [1, 2, 3];</code>). You can add values using <code>arrayadd</code>, get the length with <code>arraylength</code>, and access elements with <code>arrayName[index]</code>.
+            Arrays are declared using square brackets (<code>[]</code>) and can hold multiple values (e.g., <code>let numbers = [1, 2, 3];</code>). You can add elements with <code>arrayadd</code>, get the length of an array with <code>arraylength</code>, and access elements using the index (e.g., <code>arrayName[index]</code>).
         </p>
 
         <h2>Comments</h2>
         <p>
-            Single-line comments can be added using <code>//</code>.
+            Add single-line comments using <code>//</code> to annotate your code.
         </p>
 
         <h2>Linking Files</h2>
         <p>
-            Use <code>connect</code> to link different <code>.kq</code> files together.
+            Use the <code>connect</code> keyword to link multiple <code>.kq</code> files together.
         </p>
 
-        <h2>Running Asynchronous</h2>
+        <h2>Asynchronous Execution</h2>
         <p>
-            Use <code>async {}</code> for asynchronous execution.
+            Run asynchronous code using the <code>async {}</code> block to handle non-blocking operations.
         </p>
 
         <h2>File Management</h2>
         <p>
-            Read files using the <code>read</code> keyword (available in the KorvaqShell application).
+            File handling is done via the <code>read</code> keyword, available in the KorvaqShell environment for reading files from the filesystem.
         </p>
 
         <h2>Examples</h2>
@@ -104,16 +149,18 @@
             <li>Loop through an array of fruits.</li>
         </ul>
 
-        <h2>Recommended Approaches</h2>
+        <h2>Best Practices</h2>
         <ul>
-            <li>Use <code>let</code> for variable declarations.</li>
-            <li>Manage memory effectively with <code>delvar</code> and <code>delvar all;</code> to avoid leaks.</li>
+            <li>Prefer <code>let</code> for variable declarations unless immutability is necessary.</li>
+            <li>Manage memory by regularly using <code>delvar</code> and <code>delvar all;</code> to avoid memory leaks.</li>
         </ul>
 
         <p>
-            KorvaqScrip is designed to simplify coding while providing essential programming capabilities for effective software development.
+            KorvaqScrip is crafted to simplify programming without sacrificing essential functionality. Whether you are a beginner or an experienced developer, KorvaqScrip offers the tools you need to write efficient, maintainable code.
         </p>
     </section>
+
+    <p>For more detailed documentation, check out our <a href="../documentation/">documentation</a> page.</p>
 
     <footer>
         <p>&copy; 2024 KorvaqScrip. All rights reserved.</p>
